@@ -8,6 +8,51 @@ namespace BackPack
     {
         static void Main(string[] args)
         {
+            ListsSolution();
+
+            int[] W = new int[] { 15, 10, 2, 4 };
+            //int[] W = new int[] { 12, 2, 1, 1, 4 };
+
+            int[] V = new int[] { 30, 25, 2, 6 };
+            //int[] V = new int[] { 4, 2, 1, 2, 10 };
+
+            /*
+             * Max Weight
+             */
+            int M = 37;
+            //int M = 15;
+            int n = V.Length;
+
+            /*
+             * Run the algorithm
+             */
+            FractionalKnapsack.KnapsackGreProc(W, V, M, n);
+
+            Console.ReadKey();            
+        }
+
+        // Матод за намиране на комбинациите на елементите 
+        static List<List<int>> GetCombination(List<int> list)
+        {
+            var resultList = new List<List<int>>();
+            double count = Math.Pow(2, list.Count);
+            for (int i = 1; i <= count - 1; i++)
+            {
+                var nextList = new List<int>();
+                string str = Convert.ToString(i, 2).PadLeft(list.Count, '0');
+                for (int j = 0; j < str.Length; j++)
+                {
+                    if (str[j] == '1')
+                    {
+                        nextList.Add(list[j]);
+                    }
+                }
+                resultList.Add(nextList);
+            }
+            return resultList;
+        }
+        static void ListsSolution()
+        {
             List<int> w = new List<int> { 7, 3, 4, 5 }; // Тегла на предметите в килограми
             List<int> v = new List<int> { 42, 12, 40, 25 }; // Цени на предметите в килограми
 
@@ -40,27 +85,6 @@ namespace BackPack
 
             // Отпечаване на максималната сума
             Console.WriteLine("Maximum value: {0}$", maxValue);
-        }
-
-        // Матод за намиране на комбинациите на елементите 
-        static List<List<int>> GetCombination(List<int> list)
-        {
-            var resultList = new List<List<int>>();
-            double count = Math.Pow(2, list.Count);
-            for (int i = 1; i <= count - 1; i++)
-            {
-                var nextList = new List<int>();
-                string str = Convert.ToString(i, 2).PadLeft(list.Count, '0');
-                for (int j = 0; j < str.Length; j++)
-                {
-                    if (str[j] == '1')
-                    {
-                        nextList.Add(list[j]);
-                    }
-                }
-                resultList.Add(nextList);
-            }
-            return resultList;
         }
     }
 }
