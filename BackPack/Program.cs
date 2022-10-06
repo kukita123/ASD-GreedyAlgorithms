@@ -26,6 +26,8 @@ namespace BackPack
             /*
              * Run the algorithm
              */
+
+
             FractionalKnapsack.KnapsackGreProc(W, V, M, n);
 
             Console.ReadKey();            
