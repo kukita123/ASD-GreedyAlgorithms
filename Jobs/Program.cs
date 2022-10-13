@@ -47,6 +47,8 @@ namespace Jobs
                 Console.WriteLine(" = {0}$", currentSum);
             }
             Console.WriteLine("Minimum value: {0}$", minSum);
+
+            Console.ReadKey(Console);
         }
     }
 }

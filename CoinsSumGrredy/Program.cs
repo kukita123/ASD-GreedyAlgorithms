@@ -12,7 +12,7 @@ namespace CoinsSum
             int[] coins = { 10, 10, 5, 5, 2, 2, 1, 1 }; // множество налични монети
             Queue<int> resultCoins = new Queue<int>(); // множество монети за търсената сума
 
-            // Алгоритъм за намиране на минималния брой монети за търсената сума
+            // Итеративен алгоритъм за намиране на минималния брой монети за търсената сума
             for (int i = 0; i < coins.Length; i++)
             {
                 if (currentSum + coins[i] > finalSum) continue;

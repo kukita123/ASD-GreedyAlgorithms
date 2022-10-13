@@ -35,7 +35,6 @@ namespace EgiptFractions
             }
             Console.Write("1/{0}", q);
         }
-
         // Greatest common divisor
         private static int gcd(int a, int b)
         {
@@ -48,11 +47,13 @@ namespace EgiptFractions
 
         static void EgyptionFractionRecursively(int p, int q)
         {
-            // If either numerator or  denominator is 0 - base case (bottom of the recurssion) -> 0/1; 1/0; 0/0
+            // If either numerator or  denominator is 0 - base case
+            // (bottom of the recurssion) -> 0/1; 1/0; 0/0
             if (p == 0 || q == 0)
                 return;
 
-            // If numerator divides denominator, then simple division  makes the fraction in 1/n form
+            // If numerator divides denominator, then simple division  makes the
+            // fraction in 1/n form
             // For example 2/6, 3/9, 4/16...
             if (q % p == 0)
             {
@@ -69,7 +70,8 @@ namespace EgiptFractions
             }
 
             // If numerator is more than denominator
-            // For example 7/3 = 2 + 1/3 -> Here we need recursively call the method for 1/3
+            // For example 7/3 = 2 + 1/3 -> Here we need recursively call the method
+            // for 1/3
             if (p > q)
             {
                 Console.Write(p / q + " + ");
@@ -80,12 +82,14 @@ namespace EgiptFractions
 
             // We reach here dr > nr and q % p != 0. 
             // For example 2/7 -> 7 > 2 and 7 % 2 != 0:
-            // We need to find ceiling of dr/nr (it's dr/nr+1) and print it as first fraction -> 
+            // We need to find ceiling of dr/nr (it's dr/nr+1) and print it as
+            // first fraction -> 
             // For example 2/7 -> n = 7/2 + 1 = 4
             int n = q / p + 1;
             Console.Write("1/" + n + " + ");
 
-            // Then we need to find the remaining part of the fraction (nr*n-dr) and recur for this remaining part ->
+            // Then we need to find the remaining part of the fraction (nr*n-dr)
+            // and recur for this remaining part ->
             // For example 2/7 ->
             // recursiveli call EgyptionFractionRecursively(1, 28) -> remainig part is 1/28
             EgyptionFractionRecursively(p * n - q, q * n);
