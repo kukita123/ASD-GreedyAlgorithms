@@ -8,7 +8,7 @@ namespace CoinsSum
         static void Main(string[] args)
         {
             int finalSum = 18; // търсената сума на монети
-            int currentSum = 0; // ткуща сума монети
+            int currentSum = 0; // тeкуща сума монети
             int[] coins = { 10, 10, 5, 5, 2, 2, 1, 1 }; // множество налични монети
             Queue<int> resultCoins = new Queue<int>(); // множество монети за търсената сума
 

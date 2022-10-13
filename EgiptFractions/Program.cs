@@ -13,6 +13,13 @@ namespace EgiptFractions
             Console.WriteLine();
             EgyptionFractionRecursively(p, q);
             Console.WriteLine();
+
+            int x = 19;
+            int y = 3;
+            int courses = (int)Math.Ceiling((double)x / y);
+            Console.WriteLine(courses);
+
+
             Console.ReadKey();
         }
 

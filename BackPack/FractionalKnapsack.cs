@@ -31,6 +31,7 @@ namespace BackPack
 
             while (!stopProc)
             {
+                //If select package i:
                 if (packs[i].Weight <= remain)
                 {
                     remain -= packs[i].Weight;
@@ -39,11 +40,13 @@ namespace BackPack
                     Console.WriteLine("Pack " + i + " - Weight " + packs[i].Weight + " - Value " + packs[i].Value);
                 }
 
+                //If select the number of package i is enough:
                 if (packs[i].Weight > remain)
                 {
                     i++;
                 }
 
+                //Stop when browsing all packages
                 if (i == n)
                 {
                     stopProc = true;
